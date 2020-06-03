@@ -98,6 +98,7 @@ public class TicTacToeClass {
         // allows the given player to place their move at the given row and column. The
         // row and column numbers are 0-based, so valid numbers are 0, 1, or 2
         board[r][c] = p;
+        turns++;
     }
 
 }
