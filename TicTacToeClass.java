@@ -1,3 +1,4 @@
+
 public class TicTacToeClass {
     // Instance Variables
     private char[][] board;
@@ -19,21 +20,21 @@ public class TicTacToeClass {
         // returns true if the letter passed in currently has three in a row. That is,
         // isWinner('X') will return true if X has won, and isWinner('O') will return
         // true if O has won
-        if (playerAt(0, 0) == p && playerAt(1, 0) == p && playerAt(2, 0) == p) {
+        if (p == board[0][0] && p == board[1][0] && p == board[2][0]) {
             return true;
-        } else if (playerAt(0, 1) == p && playerAt(1, 1) == p && playerAt(2, 1) == p) {
+        } else if (board[0][1] == p && board[1][1] == p && board[2][1] == p) {
             return true;
-        } else if (playerAt(0, 2) == p && playerAt(1, 2) == p && playerAt(2, 2) == p) {
+        } else if (board[0][2] == p && board[1][2] == p && board[2][2] == p) {
             return true;
-        } else if (playerAt(0, 0) == p && playerAt(0, 1) == p && playerAt(0, 2) == p) {
+        } else if (board[0][0] == p && board[0][1] == p && board[0][2] == p) {
             return true;
-        } else if (playerAt(1, 0) == p && playerAt(1, 1) == p && playerAt(1, 2) == p) {
+        } else if (board[1][0] == p && board[1][1] == p && board[1][2] == p) {
             return true;
-        } else if (playerAt(2, 0) == p && playerAt(2, 1) == p && playerAt(2, 2) == p) {
+        } else if (board[2][0] == p && board[2][1] == p && board[2][2] == p) {
             return true;
-        } else if (playerAt(0, 0) == p && playerAt(1, 1) == p && playerAt(2, 2) == p) {
+        } else if (board[0][0] == p && board[1][1] == p && board[2][2] == p) {
             return true;
-        } else if (playerAt(0, 2) == p && playerAt(1, 1) == p && playerAt(2, 0) == p) {
+        } else if (board[0][2] == p && board[1][1] == p && board[2][0] == p) {
             return true;
         } else {
             return false;
@@ -97,8 +98,18 @@ public class TicTacToeClass {
     public void playMove(char p, int r, int c) {
         // allows the given player to place their move at the given row and column. The
         // row and column numbers are 0-based, so valid numbers are 0, 1, or 2
-        board[r][c] = p;
-        turns++;
+        // System.out.print(p + ", choose your location (row, column):");
+        // Scanner input = new Scanner(System.in);
+        // r = input.nextInt();
+        // c = input.nextInt();
+
+        if (board[r][c] == 'X' && board[r][c] == 'O') {
+            System.out.println("Not a valid location");
+        } else {
+            board[r][c] = p;
+            turns++;
+        }
+        // input.close();
     }
 
 }
